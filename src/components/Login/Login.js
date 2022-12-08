@@ -12,6 +12,13 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
+    console.log("First effect");
+    return () => {
+      console.log("first effect clean up");
+    };
+  }, []);
+
+  useEffect(() => {
     const validationHandler = setTimeout(() => {
       console.log("validity check");
       setFormIsValid(
